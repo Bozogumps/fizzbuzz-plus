@@ -1,0 +1,47 @@
+#PROG 1003 - Fall 2026
+#HW2
+#Alex Daniels
+
+import math
+
+print("HW2 - FizzBuzz+")
+print("Solution by Alex Daniels")
+print()
+
+valid_input = False
+
+while not valid_input:
+    try:
+        first_number = int(input("Enter the first number in the range to test (100-5000): "))
+        last_number = int(input("Enter the last number in the range to test (100-5000): "))
+
+        if 100 <= first_number <= 5000 and 100 <= last_number <= 5000 and first_number < last_number and last_number - first_number <= 100:
+            valid_input = True
+        else:
+           print("Invalid input. Please try again.")
+
+    except ValueError:
+        print("Please enter whole numbers.")
+
+for number in range(first_number, last_number + 1):
+
+    if number % 3 == 0 and number % 5 == 0: 
+        print(number, "is divisible by 3 and by 5")
+        radians = math.radians(number)
+        print(number, "degrees is equal to", radians, "radians")
+
+    elif number % 3 == 0:
+        print(number, "is divisible by 3")
+        cube_root = math.pow(number, 1/3)
+        print("The cube root of", number, "is", cube_root)
+
+    elif number % 5 == 0:
+        print(number, "is divisible by 5")
+        logarithm = math.log10(number)
+        print("The base 10 logarithm of", number, "is", logarithm)
+
+    else:
+        print(number, "is not divisible by 3 or by 5")
+        print("***", number, "is a lonely number ***")
+
+print("HW2 Complete")
